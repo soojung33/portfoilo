@@ -1,7 +1,7 @@
 <template>
   <div id="top">
     <swiper :slides-per-view="1" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
-      <swiper-slide style="background-image:url(/portfolio/img3.gif)" class="slide">
+      <swiper-slide style="background-image:url(/portfolio/img9.gif)" class="slide">
         <div class="header">명지전문대 정보통신공학과 허수정</div>
       </swiper-slide>
 
@@ -99,6 +99,7 @@ export default defineComponent({
         height: 100%;
         vertical-align: middle;
         align-items: center;
+        color: #ffffff;
 
       }
     }
