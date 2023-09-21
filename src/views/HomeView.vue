@@ -1,15 +1,15 @@
 <template>
   <div id="top">
     <swiper :slides-per-view="1" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
-      <swiper-slide style="background-image:url(/img3.gif)" class="slide">
+      <swiper-slide style="background-image:url(/portfolio/img3.gif)" class="slide">
         <div class="header">명지전문대 정보통신공학과 허수정</div>
       </swiper-slide>
 
-      <swiper-slide style="background-image:url(/img2.gif)" class="slide">
+      <swiper-slide style="background-image:url(/portfolio/img2.gif)" class="slide">
         <div class="header">명지전문대 정보통신공학과 허수정</div>
       </swiper-slide>
 
-      <swiper-slide style="background-image:url(/img1.gif)" class="slide">
+      <swiper-slide style="background-image:url(/portfolio/img1.gif)" class="slide">
         <div class="header">명지전문대 정보통신공학과 허수정</div>
       </swiper-slide>
 
@@ -20,12 +20,13 @@
     <div class="header"> 포트폴리오 </div>
 
     <div class="list">
-      <div class="item" @click="movePage('/portfolio1')" data-aos="fade-up" style="background-image:url(/img1.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/img3.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/img7.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/img2.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/img4.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/img6.gif)"></div>
+      <div class="item" @click="movePage('/portfolio1')" data-aos="fade-up"
+        style="background-image:url(/portfolio/img1.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img3.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img7.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img2.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img4.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img6.gif)"></div>
     </div>
   </div>
 </template>
