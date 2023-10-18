@@ -1,6 +1,6 @@
 <template>
   <div id="home" style="background-color: #000000; display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <v-img src="@/assets/main2.png" alt="Main Image" style="max-width: 60%; max-height: 60%;"></v-img>
+    <v-img src="@/assets/main2.png" alt="Main Image" style="max-width: 65%; max-height: 65%;"></v-img>
   </div>
 
   <div id="portfolio-skill">
@@ -21,16 +21,16 @@
       </v-row>
   </div>
 
-  <v-spacer style="background-color: #000000; height: 100px;"></v-spacer>
+  <v-spacer style="background-color: #000000; height: 20vh;"></v-spacer>
 
   <div id="portfolio">
     <div class="header"> 포트폴리오 </div>
 
     <div class="list">
       <div class="item" @click="movePage('/portfolio1')" data-aos="fade-up"
-        style="background-image:url(/portfolio/img1.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img3.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img7.gif)"></div>
+        style="background-image:url(/portfolio/B&L.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/Behind_1.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/makeit.gif)"></div>
       <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img2.gif)"></div>
       <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img4.gif)"></div>
       <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img6.gif)"></div>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent} from 'vue'; // ref 가져오기
 
 //swiper 컴포넌트 import
 // Import Swiper Vue.js components
@@ -63,13 +63,12 @@ export default defineComponent({
       { name: 'Adobe XD', image: require ('@/assets/adobe-xd.png')},
       { name: 'Figma', image: require ('@/assets/figma.png')},
       { name: 'Html', image: require ('@/assets/html.png') },
+      { name: 'Css', image: require ('@/assets/css.png')},
       { name: 'Java', image: require ('@/assets/java.png') },
       { name: 'Vue-js', image: require ('@/assets/vue-js.png') },
-      { name: 'Wordpress', image: require ('@/assets/wordpress.png')},
     ],
   };
 },
-
   //swiper 컴포넌트 
   components: {
     Swiper,
@@ -102,7 +101,6 @@ export default defineComponent({
 });
 
 </script>
-
 
 <style lang="less">
 
@@ -148,7 +146,7 @@ export default defineComponent({
 }
 
   .custom-card {
-    margin-bottom: 40%;
+    margin-bottom: 20%;
     background-color: #000000;
   }
 
