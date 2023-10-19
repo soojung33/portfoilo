@@ -32,7 +32,7 @@
         <div class="swiper-button-prev"></div>
         <v-row justify="center">
           <v-col cols="3" class="custom-col">
-            <div class="port-header2">{{ slide.title }}</div>
+            <div class="port-header2" style="white-space: pre;">{{ slide.title }}</div>
             <div class="port-content" style="white-space: pre;">{{ slide.content }}</div>
             <v-btn class="read-more-button" @click="movePage(slide.link)">자세히 보기</v-btn>
           </v-col>
@@ -49,18 +49,34 @@
   </div>
 
   <div id="portfolio">
-    <div class="header"> 포트폴리오 </div>
+    <div class="header"># DESIGN.-1</div>
 
     <div class="list">
       <div class="item" @click="movePage('/portfolio1')" data-aos="fade-up"
-        style="background-image:url(/portfolio/B&L.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/Behind_1.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/makeit.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img2.gif)"></div>
-      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img4.gif)"></div>
+        style="background-image:url(/portfolio/img1.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img3.gif)"></div>
       <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img6.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/magic.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img4.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/love.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/green1.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/winter.gif)"></div>
+      <div class="item" data-aos="fade-up" style="background-image:url(/portfolio/img2.gif)"></div>
+    </div>
+
+    <v-spacer style="background-color: #000000; height: 20vh;"></v-spacer>
+
+    <div class="header"># DESIGN.-2</div>
+
+    <div class="list2">
+      <div class="item2" @click="movePage('/portfolio1')" data-aos="fade-up" style="background-image:url(/portfolio/img1.gif)"></div>
+      <div class="item2" data-aos="fade-up" style="background-image:url(/portfolio/img3.gif)"></div>
+      <div class="item2" data-aos="fade-up" style="background-image:url(/portfolio/green1.gif)"></div>
+      <div class="item2" data-aos="fade-up" style="background-image:url(/portfolio/img4.gif)"></div>
     </div>
   </div>
+
+  <v-spacer style="background-color: #000000; height: 20vh;"></v-spacer>
 </template>
 
 <script>
@@ -95,8 +111,8 @@ export default defineComponent({
     ],
     slides: [
         {
-          title: 'BOOK & MUSIC LOVERS (CLUB)',
-          content: '#Vue-js #Figma \n \n 책을 읽으면서 음악도 들을 수 있는 공간 \n 본인의 책과 음원을 등록하고 수익을 얻을 수 있는 공간',
+          title: 'BOOK & MUSIC \nLOVERS (CLUB)',
+          content: '#Vue-js  #Figma \n \n 책을 읽으면서 음악도 들을 수 있는 공간 \n 본인의 책과 음원을 등록하고 수익을 얻을 수 있는 공간',
           link: '/portfolio1',
           image: require ('@/assets/B&L_M.png'),
           backgroundColor: '#f2f3f0',
@@ -121,6 +137,13 @@ export default defineComponent({
           link: '/다른페이지',
           image: require ('@/assets/Kemoa_M.png'),
           backgroundColor: '#e8f8ff',
+        },
+        {
+          title: '다른 슬라이드 제목',
+          content: '다른 슬라이드 내용',
+          link: '/다른페이지',
+          image: require ('@/assets/Bbang_M.png'),
+          backgroundColor: '#f7ecdf',
         },
       ],
   };
@@ -306,7 +329,7 @@ export default defineComponent({
   text-align: center;
   cursor: pointer;
   margin-top: 15%;
-  margin-left: 10%;
+  margin-left: 11%;
 }
 
 .read-more-button:hover {
@@ -348,31 +371,49 @@ export default defineComponent({
 
 
 #portfolio {
+  background-color: #000000;
+  color: #ffffff !important;
+
   .header {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 10%;
-    margin-top: 10%;
+    margin-bottom: 4%;
   }
-
-  width: 1000px;
-  margin: 0 auto;
 
   .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 4%;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-content: center; /* 세로 가운데 정렬 */
+    padding: 0 25%; /* 좌우 여백 설정 */
 
     .item {
-      height: 300px;
+      width: 35vh;
+      height: 35vh;
       background-position: center center;
       background-size: cover;
       border-radius: 20px;
     }
-
   }
 
-  margin-bottom: 100px;
+  .list2 {
+  display: flex;
+  flex-wrap: wrap; /* 아이템이 여러 행에 걸쳐 나타날 수 있도록 설정 */
+  justify-content: center; /* 요소 사이의 공간을 최대화하여 4열로 배치 */
+  align-content: center; /* 세로 가운데 정렬 */
+  padding: 0 25px; /* 좌우 여백 설정 */
+}
+
+.item2 {
+  width: 130vh; /* 가로 크기를 화면의 세로 크기인 100vh로 설정 */
+  height: 25vh; /* 세로 크기를 30vh로 설정 */
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  background-position: center center;
+  background-size: cover;
+  margin: 1.5%; /* 아이템 간 여백 설정 */
+}
 }
 </style>
