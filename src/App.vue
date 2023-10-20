@@ -1,18 +1,26 @@
 <template>
   <v-app>
     <Header></Header>
-    <router-view></router-view>
+    <HomeView></HomeView>
+    <PortfolioSlider></PortfolioSlider>
+    <Design></Design>
   </v-app>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import HomeView from '@/views/HomeView.vue'
+import PortfolioSlider from '@/views/PortfolioSlider.vue'
+import Design from '@/views/Design.vue'
 
 export default {
 
   name: 'App',
   components: {
-    Header
+    Header,
+    HomeView,
+    PortfolioSlider,
+    Design
   }
 }
 </script>
