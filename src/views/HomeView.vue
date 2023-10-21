@@ -22,10 +22,15 @@
   </div>
 
   <v-spacer style="background-color: #000000; height: 20vh;"></v-spacer>
+  <PortfolioSlider v-if="showPortfolioSlider" />
+  <Design v-if="showDesign" />
 </template>
 
 <script>
 import { defineComponent} from 'vue'; // ref 가져오기
+
+import PortfolioSlider from '@/views/PortfolioSlider.vue';
+import Design from '@/views/Design.vue';
 
 //스크롤할 때 애니메이션 효과 주는 라이브러리
 import aos from "aos";
@@ -34,8 +39,14 @@ import aos from "aos";
 import HelloWorld from '../components/HelloWorld.vue';
 
 export default defineComponent({
+  components:{
+    PortfolioSlider,
+    Design,
+    },
   data() {
   return {
+    showPortfolioSlider: true, // PortfolioSlider 표시 여부
+      showDesign: true, // Design 표시 여부
     portfolioItems: [
       { name: 'Adobe Photoshop', image: require ('@/assets/adobe-photoshop.png')},
       { name: 'Adobe Illustrator', image: require ('@/assets/adobe-AI.png')},
@@ -52,12 +63,6 @@ export default defineComponent({
  mounted() {
     aos.init();
   },
-  methods: {
-    movePage(path) {
-      this.$router.push(path);
-    }
-  },
-name: 'HomeView',
 });
 
 </script>
@@ -88,7 +93,7 @@ name: 'HomeView',
 
   .header {
     font-size: 30px;
-    font-weight: bold;
+    font-family: 'GothicA1-ExtraBold', sans-serif;
     margin-bottom: 5%;
   }
 

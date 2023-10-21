@@ -53,7 +53,7 @@
   }
   .card {
     overflow: hidden;
-    background-color: transparent; /* 배경을 투명하게 설정 */
+    background-color: #ffffff; /* 배경을 투명하게 설정 */
     box-shadow: none; /* 그림자 제거 */
     }
 

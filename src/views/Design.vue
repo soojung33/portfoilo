@@ -20,17 +20,19 @@
     <div class="header"># EVENT DESIGN.</div>
 
     <div class="list2">
-      <div class="item2" @click="openItem2Popup" data-aos="fade-up" style="background-image:url(/portfolio/IM_p.gif)" @mouseover="showText" @mouseout="hideText">
+      <div class="item2" @click="openItem2Popup('IM')" data-aos="fade-up" style="background-image:url(/portfolio/IM_p.gif)" @mouseover="showText" @mouseout="hideText">
         <div class="text" v-show="showOverlay"> 임영웅 B-day Event in 커먼 그라운드 현수막</div>
       </div>
-      <div class="item2" data-aos="fade-up" style="background-image:url(/portfolio/EJ_p.jpg)" @mouseover="showText" @mouseout="hideText">
+      <div class="item2" @click="openItem2Popup('EJ')" data-aos="fade-up" style="background-image:url(/portfolio/EJ_p.jpg)" @mouseover="showText" @mouseout="hideText">
         <div class="text" v-show="showOverlay">정은지 Ktown4u in Coex 네컷프레임</div>
       </div>
-      <div class="item2" data-aos="fade-up" style="background-image:url(/portfolio/JM_p.jpg)" @mouseover="showText" @mouseout="hideText">
+      <div class="item2" @click="openItem2Popup('JM')" data-aos="fade-up" style="background-image:url(/portfolio/JM_p.jpg)" @mouseover="showText" @mouseout="hideText">
         <div class="text" v-show="showOverlay">NCT JAEMIN B-day Cafe & Exhibition</div>
       </div>
     </div>
-    <Item2_IM ref="item2Popup"></Item2_IM>
+    <Item2_IM ref="item2Popup_IM"></Item2_IM>
+    <Item2_EJ ref="item2Popup_EJ"></Item2_EJ>
+    <Item2_JM ref="item2Popup_JM"></Item2_JM>
   </div>
 
   <v-spacer style="background-color: #000000; height: 20vh;"></v-spacer>
@@ -40,13 +42,17 @@
 <script>
 import { defineComponent} from 'vue'; // ref 가져오기
 import Item2_IM from "../views/Item2_IM.vue";
+import Item2_EJ from "../views/Item2_EJ.vue";
+import Item2_JM from "../views/Item2_JM.vue";
 
 //스크롤할 때 애니메이션 효과 주는 라이브러리
 import aos from "aos";
 
 export default defineComponent({  
     components:{
-     Item2_IM
+     Item2_IM,
+     Item2_EJ,
+     Item2_JM
     },
     data() {
     return {
@@ -59,8 +65,14 @@ export default defineComponent({
         aos.init();
     },
     methods: {
-    openItem2Popup() {
-      this.$refs.item2Popup.openDialog(0);
+    openItem2Popup(itemType) {
+      if (itemType === 'IM') {
+        this.$refs.item2Popup_IM.openDialog(0);
+      } else if (itemType === 'EJ') {
+        this.$refs.item2Popup_EJ.openDialog(0);
+      } else if (itemType === 'JM') {
+        this.$refs.item2Popup_JM.openDialog(0);
+      } 
     },
      showText() {
       this.showOverlay = true;
@@ -81,7 +93,7 @@ export default defineComponent({
   .header {
     text-align: center;
     font-size: 30px;
-    font-weight: bold;
+    font-family: 'GothicA1-ExtraBold', sans-serif;
     margin-bottom: 4%;
   }
 

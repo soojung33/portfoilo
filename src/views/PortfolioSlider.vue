@@ -10,7 +10,7 @@
         <v-col cols="3" class="custom-col">
           <div class="port-header2" style="white-space: pre;">{{ slide.title }}</div>
           <div class="port-content" style="white-space: pre;">{{ slide.content }}</div>
-          <v-btn class="read-more-button" @click="movePage(slide.link)">자세히 보기</v-btn>
+          <v-btn class="read-more-button" @click="goToSlide(slide.link)">자세히 보기</v-btn>
         </v-col>
         <v-col cols="5">
           <div class="port-img-container">
@@ -23,15 +23,16 @@
   </swiper-slide>
 </swiper>
 </div>
-
-
 </template>
 
 <script>
 
 import { defineComponent} from 'vue'; // ref 가져오기
-import PortfolioSlider from './PortfolioSlider.vue';
+import PortfolioSlider from '@/views/PortfolioSlider.vue';
+import Slider_BM from '@/views/Slider_BM.vue';
 import aos from "aos";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 //swiper 컴포넌트 import
 // Import Swiper Vue.js components
@@ -47,35 +48,35 @@ export default defineComponent({
         slides: [
         {
           title: 'BOOK & MUSIC \nLOVERS (CLUB)',
-          content: '#Vue-js  #Figma \n \n 책을 읽으면서 음악도 들을 수 있는 공간 \n 본인의 책과 음원을 등록하고 수익을 얻을 수 있는 공간',
-          link: '/portfolio1',
+          content: '#Vue-js  #Figma \n \n 취향/장르에 맞는 책과 음악을 감상하며 \n 본인의 책과 음원을 등록하고 수익을 얻을 수 있는 공간',
+          link: '/Slider_BM',
           image: require ('@/assets/B&L_M.png'),
           backgroundColor: '#f2f3f0',
         },
         {
-          title: 'BEHIND GALLERY',
-          content: '#Wordpress  #Adobe XD \n #Adobe Photoshop #Adobe AfterEffects \n \n \n 모네, 고흐, 고갱, 클림트의 명화를 온라인으로 볼 수 있고, \n VR 기능을 통해 실제 전시장처럼 관람할 수 있는 전시회',
+          title: 'BEHIND \nGALLERY',
+          content: '#Wordpress  #Adobe XD \n #Adobe Photoshop #Adobe AfterEffects \n \n 모네, 고흐, 고갱, 클림트의 명화를 온라인으로 볼 수 있고 \n VR 기능을 통해 실제 전시장처럼 관람할 수 있는 전시회',
           link: '/다른페이지',
           image: require ('@/assets/Behind_M2.png'),
           backgroundColor: '#dadada',
         },
         {
-          title: '다른 슬라이드 제목',
-          content: '다른 슬라이드 내용',
+          title: 'REST \nIN PLANT',
+          content: '#Figma  #Adobe Photoshop \n \n 반려동물 맞춤형 셀프 화분장 키트 \n 스마트 화분과 연동된 RIP 식물 관리 어플과 구매 웹 사이트 ',
           link: '/다른페이지',
           image: require ('@/assets/Plants_M.png'),
           backgroundColor: '#eaede6',
         },
         {
-          title: '다른 슬라이드 제목',
-          content: '다른 슬라이드 내용',
+          title: '\nKEMOA',
+          content: '#Figma \n \n주문 제작 케이크를 모아모아 \n 가게 별 포트폴리오, 그림툴, 통일된 주문 플랫폼 제공',
           link: '/다른페이지',
           image: require ('@/assets/Kemoa_M.png'),
           backgroundColor: '#e8f8ff',
         },
         {
-          title: '다른 슬라이드 제목',
-          content: '다른 슬라이드 내용',
+          title: '\n빵달곰',
+          content: '#Figma \n \n환경을 위한 한 입, 빵달곰 \n 유통기한 임박 상품을 할인된 가격으로 판매 및 구매',
           link: '/다른페이지',
           image: require ('@/assets/Bbang_M.png'),
           backgroundColor: '#f7ecdf',
@@ -91,6 +92,7 @@ export default defineComponent({
   },
 
   setup() {
+  
     const swiperOptions = {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -113,10 +115,10 @@ export default defineComponent({
     aos.init();
   },
   methods: {
-    movePage(path) {
-      this.$router.push(path);
-    }
+    goToSlide(link) {
+      this.$router.push(link);
   },
+}
 });
 
 </script>
@@ -124,12 +126,12 @@ export default defineComponent({
 <style lang="less">
 
 .portfolio-header {
-        font-size: 30px;
-        font-weight: bold;
-        color: #ffffff;
-        text-align: center;
-        background-color: #000000;
-      }
+  font-size: 30px;
+  font-family: 'GothicA1-ExtraBold', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  background-color: #000000;
+}
 
 /* Swiper Container */
 #slider {
@@ -192,14 +194,15 @@ export default defineComponent({
 .port-header2 {
   margin-top: 30%;
   font-size: 32px;
-  font-weight: bold;
+  font-family: 'GothicA1-ExtraBold', sans-serif;
   line-height: 1.3;
 }
 
 .port-content {
-  margin-top: 30%;
+  margin-top: 20%;
   font-size: 13px;
   font-weight: 600;
+  line-height: 1.8;
 }
 
 /* Read More Button */
@@ -209,7 +212,7 @@ export default defineComponent({
   padding: 5px 20px;
   text-align: center;
   cursor: pointer;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 11%;
 }
 
