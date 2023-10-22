@@ -26,17 +26,17 @@
     </v-card>
   </template>
   
-  <script>
+<script>
 export default {
   data() {
     return {
-      tab: null,
+      tab: null, // 필요한 데이터가 있는지 확인
       logoPath: require("@/assets/logo2.png"),
     };
   },
   methods: {
     goToMainPage() {
-      this.$router.push("/");
+      this.$router.push("/"); // 라우터로 페이지 이동하는 메서드
     },
     goToGitHubPage() {
       // GitHub 페이지로 이동하는 로직 추가
@@ -51,8 +51,10 @@ export default {
       window.location.href = "https://instagram.com/61.collective";
     },
   },
+  // 나머지 초기화 작업을 이곳에 추가
 };
 </script>
+
 
 <style scoped>
 .header-card {

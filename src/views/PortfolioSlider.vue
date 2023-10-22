@@ -30,6 +30,7 @@
 import { defineComponent} from 'vue'; // ref 가져오기
 import PortfolioSlider from '@/views/PortfolioSlider.vue';
 import Slider_BM from '@/views/Slider_BM.vue';
+import Slider_BH from '@/views/Slider_BH.vue';
 import aos from "aos";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -56,28 +57,28 @@ export default defineComponent({
         {
           title: 'BEHIND \nGALLERY',
           content: '#Wordpress  #Adobe XD \n #Adobe Photoshop #Adobe AfterEffects \n \n 모네, 고흐, 고갱, 클림트의 명화를 온라인으로 볼 수 있고 \n VR 기능을 통해 실제 전시장처럼 관람할 수 있는 전시회',
-          link: '/다른페이지',
+          link: '/Slider_BH',
           image: require ('@/assets/Behind_M2.png'),
           backgroundColor: '#dadada',
         },
         {
           title: 'REST \nIN PLANT',
           content: '#Figma  #Adobe Photoshop \n \n 반려동물 맞춤형 셀프 화분장 키트 \n 스마트 화분과 연동된 RIP 식물 관리 어플과 구매 웹 사이트 ',
-          link: '/다른페이지',
+          link: '/Slider_RIP',
           image: require ('@/assets/Plants_M.png'),
           backgroundColor: '#eaede6',
         },
         {
           title: '\nKEMOA',
           content: '#Figma \n \n주문 제작 케이크를 모아모아 \n 가게 별 포트폴리오, 그림툴, 통일된 주문 플랫폼 제공',
-          link: '/다른페이지',
+          link: '/Slider_KE',
           image: require ('@/assets/Kemoa_M.png'),
           backgroundColor: '#e8f8ff',
         },
         {
           title: '\n빵달곰',
           content: '#Figma \n \n환경을 위한 한 입, 빵달곰 \n 유통기한 임박 상품을 할인된 가격으로 판매 및 구매',
-          link: '/다른페이지',
+          link: '/Slider_BB',
           image: require ('@/assets/Bbang_M.png'),
           backgroundColor: '#f7ecdf',
         },

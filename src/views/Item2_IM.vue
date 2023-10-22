@@ -19,9 +19,9 @@
         dialog: false,
         selectedImage: null,
         images: [
-          '/portfolio/IM/IM_1.png',
-          '/portfolio/IM/IM_2.png',
           '/portfolio/IM/IM_3.png',
+          '/portfolio/IM/IM_2.png',
+          '/portfolio/IM/IM_1.png',
           '/portfolio/IM/IM_4.gif',
           '/portfolio/IM/IM_5.gif',
           '/portfolio/IM/IM_6.gif',

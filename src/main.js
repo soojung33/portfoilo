@@ -5,11 +5,16 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 import '@fortawesome/fontawesome-free/js/all.js'
+import Header from '@/components/Header.vue'
 
 loadFonts()
 
-createApp(App)
-  .use(router)
-  .use(store)
-  .use(vuetify)
-  .mount('#app')
+
+const app = createApp(App)
+app.component('Header', Header)
+app.use(router)
+app.use(store)
+app.use(vuetify)
+app.mount('#app')
+
+  
